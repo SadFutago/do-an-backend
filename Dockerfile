@@ -16,7 +16,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Sao chép mã nguồn và cài đặt dependencies
 WORKDIR /var/www/html
 COPY . .
-RUN composer install --no-dev --optimize-autoload
+RUN composer install --no-dev --optimize-autoloader
 RUN php artisan config:cache
 RUN php artisan route:cache
 
