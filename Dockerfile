@@ -5,7 +5,9 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libzip-dev \
     unzip \
-    && docker-php-ext-install pdo pdo_mysql zip \
+    libonig-dev \
+    libxml2-dev \
+    && docker-php-ext-install pdo pdo_mysql zip bcmath ctype fileinfo mbstring xml \
     && apt-get clean
 
 # Cài đặt Composer
