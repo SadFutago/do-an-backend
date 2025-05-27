@@ -20,6 +20,11 @@ RUN composer install --no-dev --optimize-autoloader
 RUN php artisan config:cache
 RUN php artisan route:cache
 
+# Thêm APP_KEY tạm thời cho quá trình build
+ENV APP_KEY=base64:JURnroXANH3qSx6Yac1ch7BRrtvs2XvheX4AdSEajSY=
+RUN php artisan config:cache
+RUN php artisan route:cache
+
 # Phân quyền cho thư mục storage và cache
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 RUN chmod -R 775 /var/www/html/storage
