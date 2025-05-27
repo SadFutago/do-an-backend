@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->register(AddressServiceProvider::class);
+        $this->app->register(LocationServiceProvider::class); // Cập nhật tên lớp
     }
 
     public function boot(): void
